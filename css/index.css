@@ -1,0 +1,10 @@
+ul{
+	text-align:center;
+	width:90%;
+	z-index: 2;
+}
+li{
+	display:inline-block;
+	padding:15px;
+	z-index: 2;
+}

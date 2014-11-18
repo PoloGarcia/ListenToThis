@@ -1,0 +1,100 @@
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed');
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
+
+p{
+    font-size: 25px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    color: #2952CC;
+}
+
+.btn {
+    background: none;
+    border: solid black;
+    font-family: 'Exo';
+    font-size: 25px;
+    font-weight: 100;
+    border-width: thin;
+    padding: 15px 15px;
+    outline: none;
+}
+
+.btn:hover{
+    background: black;
+    color: yellow;
+    border: solid yellow;
+    border-width: thin;
+    cursor: pointer;
+}
+
+.send {
+    background: none;
+    border: solid #007A00;
+    font-family: 'Roboto';
+    font-size: 25px;
+    font-weight: 100;
+    border-width: thin;
+    padding: 15px 15px;
+    outline: none;
+    color: #007A00;
+    font-weight: 300;
+}
+
+.send:hover{
+    cursor: pointer;
+}
+
+.spacer{
+    padding: 20px 20px;
+    background: none;
+}
+
+.spacer2{
+    padding: 2px 2px;
+    background: none;
+}
+
+.container{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.whiteB{
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    width: 45%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+input[type=text]{
+    width: 70%;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+    border: solid black;
+    border-width: thin;
+    padding: 10px 10px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    outline: none;
+}
+
+input[type=text]:focus{
+    width: 70%;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+    border: solid #2952CC;
+    border-width: thin;
+    padding: 10px 10px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    outline: none;
+}
+
