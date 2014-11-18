@@ -1,5 +1,6 @@
 <html>
 <head>
+	<!-- prueba -->
 	<link rel="stylesheet" href="css/index.css">
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
