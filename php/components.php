@@ -3,7 +3,7 @@ include_once 'util.php';
 function load_cards(){
 	$mysql=connect();
 	$result="";
-	$query="SELECT * FROM `tags`";
+	$query="SELECT * FROM `tags` ORDER BY count DESC";
 	$DataSource = $mysql->query($query);
 	$rowcount=mysqli_num_rows($DataSource); 
 	for ($i=0; $i <$rowcount ; $i++) { 
