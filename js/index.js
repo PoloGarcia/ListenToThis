@@ -1,0 +1,10 @@
+$(document).ready(function(){
+	$('.spin').show();
+    $('.spin').spin('show');
+    $('#content_data').fadeIn('slow',function(){
+      $('#content_data').load("./php/components.php",function(){
+      	$('.spin').spin('hide');
+        $('.spin').hide();
+      });
+    });
+});
