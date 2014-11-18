@@ -18,6 +18,10 @@ p{
     border-width: thin;
     padding: 15px 15px;
     outline: none;
+    -webkit-transition-property: background; /* Safari */
+    -webkit-transition-duration: 1.5s; 
+    transition-property: background;
+    transition-duration: 1.5s;
 }
 
 .btn:hover{

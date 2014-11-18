@@ -6,7 +6,7 @@ body{
 	padding: 0;
 	background: #FFFFFF;
 
-	color: #003380;
+	color: #FFFFFF;
 	font-family: Arial;
 	font-size: 12px;
 }
@@ -71,18 +71,18 @@ body{
 }
 
 h1 span{
-	color: #2952CC !important;
+	color: #3399FF !important;
 }
 
 h1 {
-	font-size: 73px;
+	font-size: 40px;
 	font-family: 'exo';
 	font-weight: 400;
 	text-align: center;
 	padding-top: 5%;
-	color: #0C193D !important;
+	color: #FFFFFF !important;
 	margin-bottom: -5px;
-	margin-top: -10px;
+	margin-top: -50px;
 }
 
 .login{
@@ -169,8 +169,8 @@ h1 {
 
 .icon {
 	margin-bottom: 20px;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	text-align: center;
 	display: block;
 	margin-left: auto;
@@ -211,5 +211,75 @@ h1 {
 	color: #0C193D !important;
 	margin-bottom: 10px;
 	text-align: center;
+}
+
+hr{
+	border: 0;
+	height: 1px;
+	background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+	background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+
+.titleBg{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: #ffffff;
+	height: 170px;
+	text-align: center;
+	padding-top: 15px;
+	/* Adds shadow to the bottom of the bar */
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;
+	-moz-box-shadow: 0px 0px 8px 0px #000000;
+	box-shadow: 0px 0px 8px 0px #000000;
+	/* Adds the transparent background */
+	background-color: rgba(1, 1, 1, 0.85);
+	color: rgba(1, 1, 1, 0.8);
+	margin-bottom: 50px;
+}
+
+.title{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	color: #ffffff;
+	height: 150px;
+	text-align: center;
+	padding-top: 15px;
+	/* Adds shadow to the bottom of the bar */
+	-webkit-box-shadow: 0px 0px 8px 0px #000000;
+	-moz-box-shadow: 0px 0px 8px 0px #000000;
+	box-shadow: 0px 0px 8px 0px #000000;
+	/* Adds the transparent background */
+	background-color: rgba(1, 1, 1, 0.85);
+	color: rgba(1, 1, 1, 0.8);
+	margin-bottom: 50px;
+}
+
+.title a{
+	text-decoration: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+a:link {
+    color: #ffffff;
+}
+
+/* visited link */
+a:visited {
+    color: #ffffff;
+}
+
+.spacer3{
+	padding: 100px;
+}
+
+.spacer4{
+	padding: 130px;
 }
 

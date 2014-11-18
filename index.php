@@ -12,8 +12,13 @@
 <body>
 	<div class="background"> </div>
 	<!--Pattern HTML-->
-	<h1><span>Listen</span>To<span>This</span></h1>
-	<div><img class="icon" src="img/icon.png"></div>
+	<div class="title">
+		<a href="#top">
+		<h1><span>Listen</span>To<span>This</span></h1>
+		<div><img class="icon" src="img/icon.png"></div>
+		</a>
+	</div>
+	<div class="spacer3" id="top"><div>
 	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 	<div class="vertical">
 		<div class="spin" data-spin></div>
