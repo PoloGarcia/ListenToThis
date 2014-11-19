@@ -1,3 +1,9 @@
+<?php 
+	session_start();
+	include('php/util.php');
+	if(empty($_SESSION['isActive']))
+		header('Location: login.php');
+?>
 <html>
 <head>
 	<link rel="stylesheet" href="css/buttons.css">
@@ -20,7 +26,7 @@
 			<span class="spacer5"></span>
 			<img src="img/logout.png" class="icons">
 			<span class="spacer2"></span>
-			<a href="login.html">Logout</a>
+			<a id="logout" href="php/logout.php">Logout</a>
 		</div>
 		<h1><span>Listen</span>To<span>This</span></h1>
 		<div><img class="icon" src="img/icon.png"></div>

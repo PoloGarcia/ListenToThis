@@ -167,6 +167,7 @@ body{
 				<input type="text" placeholder="username" name="user"><br>
 				<input type="password" placeholder="password" name="password"><br>
 				<input type="submit" value="Login">
+				<p>Incorrect username or password<p>
 			</form>
 		</div>
 

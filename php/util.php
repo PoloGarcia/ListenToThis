@@ -217,6 +217,10 @@ function authenticate($usr,$pwd) {
 
 }
 
+function logout() {
+    
+}
+
 
 
 
