@@ -154,6 +154,19 @@ function inserting_donacion($idAcopio,$idProducto,$cantidad){
     close($mysql);
 }
 
+function authenticate($usr,$pwd) {
+    $mysql = connect();
+    $query = "SELECT * FROM users WHERE usr='$usr' AND pwd='$pwd'";
+    $res = mysqli_query($mysql, $query);
+    if(mysqli_fetch_array($res)) {
+        
+        return 1;
+    }
+
+    return 0;
+
+}
+
 
 
 
