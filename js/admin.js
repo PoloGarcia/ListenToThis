@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$('#dropdownCollection').load('php/loadDropdown.php');
 	$('.spin').hide();
 	$('#NewCollection').hide();
 	$('#NewContent').hide();
@@ -64,7 +65,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			url: "php/controllerAddSong.php",
-			data: {addCollection: "AddCollection", URI: URI}, 
+			data: {addCollection: "AddCollection", tag: tag}, 
 			success: function(data){
 				console.log(data);
 				$('#NewCollection').hide();
@@ -72,6 +73,7 @@ $(document).ready(function(){
 				$('#Result').html(data);
 				$('#Result').show();
 				clearInput();
+				$('#dropdownCollection').load('php/loadDropdown.php');
 			}
 		});
 	});
