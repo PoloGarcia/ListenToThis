@@ -20,14 +20,11 @@
 		</a>
 	</div>
 	<div class="spacer3" id="top"><div>
-	<div id="followSpotify" class="center"><iframe src="https://embed.spotify.com/follow/1/?uri=spotify:artist:1vCWHaC5f2uS3yhpwWbIA6&size=detail&theme=light" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe></div>
 	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
 	<div class="vertical">
 		<div class="spin" data-spin></div>
 	</div>
-	<ul class="items">
 	<div id="content_data"></div>
-	</ul>
 	<!--End Pattern HTML-->
 	
 </body>

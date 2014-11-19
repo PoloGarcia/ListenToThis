@@ -19,9 +19,9 @@ p{
     padding: 15px 15px;
     outline: none;
     -webkit-transition-property: background; /* Safari */
-    -webkit-transition-duration: 1.5s; 
+    -webkit-transition-duration: 1.3s; 
     transition-property: background;
-    transition-duration: 1.5s;
+    transition-duration: 1.3s;
 }
 
 .btn:hover{
@@ -87,6 +87,7 @@ input[type=text]{
     font-family: 'Roboto';
     font-weight: 300;
     outline: none;
+    color: black;
 }
 
 input[type=text]:focus{
@@ -102,3 +103,37 @@ input[type=text]:focus{
     outline: none;
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+    color:    #666;
+}
+input:-moz-placeholder, textarea:-moz-placeholder { 
+    color:    #666;
+}
+input::-moz-placeholder, textarea::-moz-placeholder { 
+    color:    #666;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { 
+    color:    #666;
+}
+
+select{
+    width: 70%;
+    font-size: 20px;
+    text-align: center;
+    background: none;
+    border: solid black;
+    border-width: thin;
+    padding: 10px 10px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    outline: none;
+    color: black;
+    border-radius: 0;
+    background: url("../img/downArrow.png") no-repeat right;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+}

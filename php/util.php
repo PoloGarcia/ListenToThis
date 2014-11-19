@@ -16,24 +16,24 @@ function showquery($query){
     $fields = mysqli_num_fields($results);
     $rowcount=mysqli_num_rows($results);
     if($results){
-    if ($rowcount>=1) {
-        echo "<table>";
-        for ($it=0; $it < $fields ; $it++) { 
-            $name = mysqli_fetch_field_direct($results,$it);
-            echo "<th>" . $name->name . "</th>";
-        }
-        for ($i=0; $i < $rowcount ; $i++) { 
-            $row = mysqli_fetch_array($results);
-            echo "<tr>";
-            for ($j=0; $j < $fields ; $j++) { 
-                echo "<td>" .  $row[$j] . "</td>";
+        if ($rowcount>=1) {
+            echo "<table>";
+            for ($it=0; $it < $fields ; $it++) { 
+                $name = mysqli_fetch_field_direct($results,$it);
+                echo "<th>" . $name->name . "</th>";
             }
-            echo "</tr>";
+            for ($i=0; $i < $rowcount ; $i++) { 
+                $row = mysqli_fetch_array($results);
+                echo "<tr>";
+                for ($j=0; $j < $fields ; $j++) { 
+                    echo "<td>" .  $row[$j] . "</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p> No results matching </p>";
         }
-        echo "</table>";
-    } else {
-        echo "<p> No results matching </p>";
-    }
     } else {
         echo "<p> No results matching </p>";
     }
@@ -47,24 +47,24 @@ function showdonation($query){
     $rowcount=mysqli_num_rows($results);
     echo "<br><br>";
     if($results){
-    if ($rowcount>=1) {
-        echo "<table class=\"donaciones\">";
-        for ($it=0; $it < $fields ; $it++) { 
-            $name = mysqli_fetch_field_direct($results,$it);
-            echo "<th>" . $name->name . "</th>";
-        }
-        for ($i=0; $i < $rowcount ; $i++) { 
-            $row = mysqli_fetch_array($results);
-            echo "<tr>";
-            for ($j=0; $j < $fields ; $j++) { 
-                echo "<td>" .  $row[$j] . "</td>";
+        if ($rowcount>=1) {
+            echo "<table class=\"donaciones\">";
+            for ($it=0; $it < $fields ; $it++) { 
+                $name = mysqli_fetch_field_direct($results,$it);
+                echo "<th>" . $name->name . "</th>";
             }
-            echo "</tr>";
+            for ($i=0; $i < $rowcount ; $i++) { 
+                $row = mysqli_fetch_array($results);
+                echo "<tr>";
+                for ($j=0; $j < $fields ; $j++) { 
+                    echo "<td>" .  $row[$j] . "</td>";
+                }
+                echo "</tr>";
+            }
+            echo "</table>";
+        } else {
+            echo "<p class=\"donaciones\"> No results matching </p>";
         }
-        echo "</table>";
-    } else {
-        echo "<p class=\"donaciones\"> No results matching </p>";
-    }
     } else {
         echo "<p class=\"donaciones\"> No results matching </p>";
     }
@@ -74,12 +74,11 @@ function showdonation($query){
 function dropdown($name,$query, $id){
     $mysql = connect();
     $results = $mysql->query($query);
-    echo "<div class=\"form-group\"> <div class=\"col-xs-12\">";
-    echo "<select class=\"form-control input-lg\" required name=$name id=$id>";
+    echo "<select name=\"Collection\" id=$id name=$name>";
     while($row = mysqli_fetch_array($results, MYSQLI_BOTH)){
         echo "<option value=$row[0]>" . $row[1] . "</option>";
     }
-    echo "</select> </div> </div>";
+    echo "</select>";
     close($mysql);
 }
 
@@ -154,12 +153,63 @@ function inserting_donacion($idAcopio,$idProducto,$cantidad){
     close($mysql);
 }
 
+function inserting_song($songURI,$tag){
+    $mysql = connect();
+    $query='INSERT INTO `alequipo01`.`songs` (`uri`,`tag`) VALUES (?,?)';
+    if (!($statement = $mysql->prepare($query))) {
+        die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+    }
+    if (!$statement->bind_param("ss", $songURI,$tag)) {
+        die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+    }
+    if (!$statement->execute()) {
+        die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+    } else {
+        return true;
+    }
+    close($mysql);
+}
+
+function inserting_collection($tag){
+    $mysql = connect();
+    $query='INSERT INTO `alequipo01`.`tags` (`tag`) VALUES (?)';
+    if (!($statement = $mysql->prepare($query))) {
+        die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+    }
+    if (!$statement->bind_param("s",$tag)) {
+        die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+    }
+    if (!$statement->execute()) {
+        die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+    } else {
+        return true;
+    }
+    close($mysql);
+}
+
+function update_Spotify($oldSpotURI,$spotURI){
+    $mysql = connect();
+    $query='UPDATE  `alequipo01`.`users` SET  `spotURI` =? WHERE `users`.`spotURI` =?';
+    if (!($statement = $mysql->prepare($query))) {
+        die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+    }
+    if (!$statement->bind_param("ss",$spotURI,$oldSpotURI)) {
+        die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+    }
+    if (!$statement->execute()) {
+        die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+    } else {
+        return true;
+    }
+    close($mysql);
+}
+
 function authenticate($usr,$pwd) {
     $mysql = connect();
     $query = "SELECT * FROM users WHERE usr='$usr' AND pwd='$pwd'";
     $res = mysqli_query($mysql, $query);
     if(mysqli_fetch_array($res)) {
-        
+
         return 1;
     }
 
