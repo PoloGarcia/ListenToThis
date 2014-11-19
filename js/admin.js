@@ -64,7 +64,7 @@ $(document).ready(function(){
 		$.ajax({
 			type: "POST",
 			url: "php/controllerAddSong.php",
-			data: {addCollection: "AddCollection", URI: URI}, 
+			data: {addCollection: "AddCollection", tag: tag}, 
 			success: function(data){
 				console.log(data);
 				$('#NewCollection').hide();
@@ -128,4 +128,8 @@ function clearInput() {
 		$(this).val('');
 	});
 	$("")
+}
+
+function loadDropdown(){
+	
 }

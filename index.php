@@ -26,6 +26,5 @@
 	</div>
 	<div id="content_data"></div>
 	<!--End Pattern HTML-->
-	
 </body>
 </html>

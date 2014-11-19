@@ -38,6 +38,7 @@
 			<br><br>
 			<input type="text"  placeholder="Spotify URI" name="songURI" id="songURI" required>
 			<p>Select collection to add song</p>
+			<div id="dropdownCollection"></div>
 			<?php 
 			include_once 'php/util.php';
 			dropdown("collections","SELECT count, tag FROM tags ORDER BY count DESC","collections");
