@@ -8,6 +8,10 @@ $(document).ready(function(){
 	var currentURI = $('#URI').val();
 	console.log(currentURI);
 	$('#newSong').click(function(){
+		$('#waitMessage').hide();
+		$( "#dropdownCollection" ).load( "php/loadDropdown.php", function() {
+			$('#waitMessage').hide();
+		});
 		hideOpen();
 		$('#NewContent').fadeIn();
 	});
@@ -113,12 +117,10 @@ function hideOpen(){
 		$('#NewContent').hide();
 	} else if ($('#Result').is(':visible')){
 		$('#Result').hide();
-	} else if ($('#newCollection').is(':visible')) {
+	} else if ($('#NewCollection').is(':visible')) {
 		$('#NewCollection').hide();
 	} else if ($('#Settings').is(':visible')) {
 		$('#Settings').hide();
-	} else if ($('#Result').is(':visible')) {
-		$('#Result').hide();
 	}
 }
 

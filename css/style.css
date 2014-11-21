@@ -301,3 +301,23 @@ a:visited {
 	font-weight: 300;
 	color: black;
 }
+
+.fbinfo{
+	font-size: 20px;
+	font-family: 'Roboto';
+	font-weight: 300;
+	color: black;
+	position: static !important;
+}
+
+.fbinfo img{
+	border-radius: 90px;
+}
+
+.spacer6{
+	padding: 50px;
+}
+
+.spacer7{
+	padding: 10px;
+}

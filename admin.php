@@ -44,6 +44,7 @@
 			<br><br>
 			<input type="text"  placeholder="Spotify URI" name="songURI" id="songURI" required>
 			<p>Select collection to add song</p>
+			<p id="waitMessage">Loading collections please wait .. </p>
 			<div id="dropdownCollection"></div>
 			<br>
 			<!--<input type="text">-->

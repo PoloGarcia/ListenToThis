@@ -1,20 +1,3 @@
-<html>
-<head>
-	<!-- prueba -->
-	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/buttons.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
-	<!-- SPIN !-->
-	<script src="js/spin/jquery.spin.js" type="text/javascript"></script>
-	<link href="js/spin/jquery.spin.css" rel="stylesheet" type="text/css" />
-	<!-- SPIN !-->
-	<script type="text/javascript" src="js/index.js"></script>
-	<script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script>
-	<script type="text/javascript" src="js/fb.js"></script>
-</head>
-<body>
-	<!--<script>
 	  // This is called with the results from from FB.getLoginStatus().
 	  function statusChangeCallback(response) {
 	  	console.log('statusChangeCallback');
@@ -105,35 +88,3 @@
 	  	});
 	  }
 
-
-	</script>-->
-	<div class="background"> </div>
-	<!--Pattern HTML-->
-	<div class="title">
-		<a href="#top">
-			<h1><span>Listen</span>To<span>This</span></h1>
-			<div><img class="icon" src="img/icon.png"></div>
-		</a>
-	</div>
-	<div class="spacer3" id="top"><div>
-		<div class="fb-login-button center whiteB fbinfo" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="true" data-auto-logout-link="true">
-			<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" autologoutlink="true"></fb:login-button>
-			<div id="status"></div>
-			<div id="mail"></div>
-			<div class="spacer7"></div>
-			<div id="profilepic"></div>
-			<div class="spacer7"></div>
-			<div class="center">
-				<div class="spin" id="spin2" data-spin></div>
-			</div>
-			<div class="container" id="sub" hidden>
-				<button class="btnSub" id="doSub"> Subscribe to newsletter </button>
-			</div>
-		</div>
-		<div class="vertical">
-			<div class="spin" id="spin1" data-spin></div>
-		</div>
-		<div id="content_data"></div>
-		<!--End Pattern HTML-->
-	</body>
-	</html>

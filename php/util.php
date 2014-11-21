@@ -204,6 +204,24 @@ function update_Spotify($oldSpotURI,$spotURI){
     close($mysql);
 }
 
+function inserting_Subscription($mail){
+    $mysql = connect();
+    $query='INSERT INTO `alequipo01`.`subscribers` (`mail`) VALUES (?)';
+    if (!($statement = $mysql->prepare($query))) {
+        die("Preparation failed: (" . $mysql->errno . ") " . $mysql->error);
+    }
+    if (!$statement->bind_param("s",$mail)) {
+        die("Parameter vinculation failed: (" . $statement->errno . ") " . $statement->error); 
+    }
+    if (!$statement->execute()) {
+        return false;
+        die("Execution failed: (" . $statement->errno . ") " . $statement->error);
+    } else {
+        return true;
+    }
+    close($mysql);
+}
+
 function authenticate($usr,$pwd) {
     $mysql = connect();
     $query = "SELECT * FROM users WHERE usr='$usr' AND pwd='$pwd'";

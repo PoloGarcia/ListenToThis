@@ -32,6 +32,29 @@ p{
     cursor: pointer;
 }
 
+.btnSub {
+    background: none;
+    border: solid black;
+    font-family: 'Exo';
+    font-size: 15px;
+    font-weight: 100;
+    border-width: thin;
+    padding: 15px 15px;
+    outline: none;
+    -webkit-transition-property: background; /* Safari */
+    -webkit-transition-duration: 1.3s; 
+    transition-property: background;
+    transition-duration: 1.3s;
+}
+
+.btnSub:hover{
+    background: black;
+    color: yellow;
+    border: solid yellow;
+    border-width: thin;
+    cursor: pointer;
+}
+
 .send {
     background: none;
     border: solid #007A00;
