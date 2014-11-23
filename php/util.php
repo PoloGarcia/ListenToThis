@@ -227,16 +227,50 @@ function authenticate($usr,$pwd) {
     $query = "SELECT * FROM users WHERE usr='$usr' AND pwd='$pwd'";
     $res = mysqli_query($mysql, $query);
     if(mysqli_fetch_array($res)) {
-
+        close($mysql);
         return 1;
     }
-
+    close($mysql);
     return 0;
-
 }
 
-function logout() {
-    
+function sendmail() {
+
+    $mysql = connect();
+    $query = "SELECT * FROM `subscribers`";
+    $playlists = "SELECT * FROM `tags`";
+    $res = mysqli_query($mysql, $query);
+    $playlistsNames = mysqli_query($mysql, $playlists);
+    $mails_sent = true;
+
+    while($reg = mysqli_fetch_array($res)) {
+
+        $to=$reg["mail"];
+        $subject="ListenToThis Monthly Newsletter";
+        $header="From: ListenToThis <DO_NOT_REPLY@ListenToThis.com"."\r\n"."Content-type: text/html; charset=\"UTF-8\""."\r\n"."MIME-Version: 1.0";
+        $message = '
+        <html>
+            <head>
+                <title>This is your ListenToThis Monthly Newsletter</title>
+            </head>
+            <body>
+            <p>Hello. This is your monthly feed sent to you by ListenToThis!</p>
+            <p>Click <a href="teamone.manmora.com/ListenToThisTEST">here</a> to listen to the latest additions to your favorite playlists.</p>
+            </body>
+        </html>
+        ';
+                
+        if(!$sentmail = mail($to,$subject,$message,$header)){
+            echo "<h1>Error enviando correo a " . $name . "</h1>";
+            $mails_sent = false;
+        }
+    }
+    if($mails_sent){
+        close($mysql);
+        return 1;
+    }
+    close($mysql);
+    return 0;
 }
 
 

@@ -15,10 +15,12 @@ $(document).ready(function(){
 		hideOpen();
 		$('#NewContent').fadeIn();
 	});
+	/*
 	$('#sendMail').click(function(){
 		hideOpen();
 		$('#Result').fadeIn();
 	});
+*/
 	$('#newCollection').click(function(){
 		hideOpen();
 		$('#NewCollection').fadeIn();
@@ -109,6 +111,25 @@ $(document).ready(function(){
 		});
 	});
 	//<-------------------------- UPDATE USR SPOTIFY ------------------------------------------->
+
+	//<-------------------------- SEND NEWSLETTER ------------------------------------------->
+	$('#sendMail').click(function(event){
+		$('.spin').show();
+		event.preventDefault();
+		$.ajax({
+			type: "POST",
+			url: "php/controllerAddSong.php",
+			data: {sendNewsletter: "SendNewsletter"}, 
+			success: function(data){
+				console.log(data);
+				$('.spin').hide();
+				$('#Result').html(data);
+				$('#Result').show();
+				clearInput();
+			}
+		});
+	});
+	//<-------------------------- SEND NEWSLETTER ------------------------------------------->
 
 });
 

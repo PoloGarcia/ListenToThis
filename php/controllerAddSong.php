@@ -21,5 +21,12 @@ if (isset($_POST['addToCollection']) == 'AddToCollection') {
 		$URI ."&size=detail&theme=light\" width=\"300\" height=\"56\" scrolling=\"no\" frameborder=\"0\" style=\"border:none; overflow:hidden;\" allowtransparency=\"true\"></iframe></div>";;
 		print($result);
 	}
+} else if (isset($_POST['sendNewsletter']) == 'SendNewsletter') {
+	if(sendmail()) {
+		$result = "<p>The mails have been sent.</p>";
+		print($result);
+	} else{
+		$result = "<p>Failed.</p>";
+	}
 }
 ?>
