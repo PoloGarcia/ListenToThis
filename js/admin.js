@@ -115,6 +115,7 @@ $(document).ready(function(){
 	//<-------------------------- SEND NEWSLETTER ------------------------------------------->
 	$('#sendMail').click(function(event){
 		$('.spin').show();
+		hideOpen();
 		event.preventDefault();
 		$.ajax({
 			type: "POST",
